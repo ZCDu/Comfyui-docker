@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  comfyui:
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./ComfyUI:/app/ComfyUI
+      - ./models:/app/ComfyUI/models
+    ports:
+      - 8188:8188
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities:
+                - gpu
+    image: comfyui:0.2.40
+    command: python main.py --listen 0.0.0.0
+    restart: always
