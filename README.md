@@ -23,3 +23,14 @@ https://github.com/rgthree/rgthree-comfy.git
 https://github.com/WASasquatch/was-node-suite-comfyui.git
 https://github.com/XLabs-AI/x-flux-comfyui.git
 
+https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl
+
+# Impack-Pack
+https://github.com/ltdrdata/ComfyUI-Impact-Pack
+需要在该分支下git 依赖的分支
+```shell
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack impact_subpack
+```
+## 依赖模型
+依据install-manual中的down的模型，下载到对应的位置：
+1. sam -> /app/ComfyUI/models/sams/*.pth
