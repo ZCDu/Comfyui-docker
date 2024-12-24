@@ -24,11 +24,11 @@ RUN cd custom_nodes/rgthree-comfy && pip install --no-cache-dir -r requirements.
 RUN cd custom_nodes/ComfyUI-FluxTrainer && pip install --no-cache-dir -r requirements.txt
 RUN cd custom_nodes/was-node-suite-comfyui && pip install --no-cache-dir -r requirements.txt
 RUN cd custom_nodes/ComfyUI_essentials && pip install --no-cache-dir -r requirements.txt
-RUN cd custom_nodes/ComfyUI-PuLID-Flux-Enhanced && pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir llama-cpp-python \
   --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 RUN git clone https://github.com/PortAudio/portaudio.git && cd portaudio && ./configure && make && make install
 RUN pip install --no-cache-dir minio requests certifi py-cord[voice] pyaudio moviepy==1.0.3
+RUN pip install --no-cache-dir playwright && playwright install
 RUN cd custom_nodes/ComfyUI-Impact-Pack && pip install --no-cache-dir -r requirements.txt
 RUN cd custom_nodes/comfyui-art-venture && pip install --no-cache-dir -r requirements.txt
 RUN cd custom_nodes/ComfyUI-Diffusers-OminiControl && pip install --no-cache-dir -r requirements.txt

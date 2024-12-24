@@ -20,3 +20,4 @@ git clone https://github.com/Macoron/ComfyUI-Diffusers-OminiControl.git ComfyUI/
 git clone https://github.com/city96/ComfyUI-GGUF.git ComfyUI/custom_nodes/ComfyUI-GGUF --depth=1
 git clone https://github.com/kijai/ComfyUI-HunyuanVideoWrapper.git ComfyUI/custom_nodes/ComfyUI-HunyuanVideoWrapper --depth=1
 git clone https://github.com/IuvenisSapiens/ComfyUI_Qwen2-VL-Instruct.git ComfyUI/custom_nodes/ComfyUI_Qwen2-VL-Instruct --depth=1
+git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes ComfyUI/custom_nodes/Derfuu_ComfyUI_ModdedNodes --depth=1
