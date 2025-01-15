@@ -34,3 +34,8 @@ git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack impact_subpack
 ## 依赖模型
 依据install-manual中的down的模型，下载到对应的位置：
 1. sam -> /app/ComfyUI/models/sams/*.pth
+
+# 执行流程
+1. ./download_repo.py
+2. ./get_requirments.py
+3. docker build

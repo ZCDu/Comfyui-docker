@@ -16,6 +16,6 @@ services:
               device_ids: ["0"]
               capabilities:
                 - gpu
-    image: comfyui:0.3.3
+    image: comfyui:0.3.7
     command: python main.py --listen 0.0.0.0
     restart: always
