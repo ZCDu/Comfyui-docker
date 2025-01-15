@@ -12,7 +12,7 @@ def clone_github_projects(file_path):
     with open(file_path, 'r') as file:
         for line in file:
             project_url = line.strip()  # 去除行末的换行符
-            project_name = project_url.split('/')[-1].strip('.git')  # 获取项目名称
+            project_name = project_url.split('/')[-1].split(".git")[0]  # 获取项目名称
             while True:
                 try:
                     # 尝试克隆项目
@@ -25,7 +25,12 @@ def clone_github_projects(file_path):
                         custom_folder = os.path.join(first_project_path, 'custom_nodes')
                         os.makedirs(custom_folder, exist_ok=True)
                     else:
-                        subprocess.check_call(['git', 'clone', project_url, os.path.join(first_project_path,"custom_nodes",project_name), "--depth=1"])
+                        # FIXME: clone失败这个文件夹是否会存在
+                        if os.path.exists(os.path.join(first_project_path,"custom_nodes",project_name)):
+                            print(f"{project_name}重复，不再下载")
+                            break
+                        else:
+                            subprocess.check_call(['git', 'clone', project_url, os.path.join(first_project_path,"custom_nodes",project_name), "--depth=1"])
                     break
                 except subprocess.CalledProcessError:
                     print(f"克隆项目 {project_url} 失败，正在重试...")
