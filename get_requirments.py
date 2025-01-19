@@ -13,19 +13,29 @@ def get_requirements_files(folder_path):
 
 def merge_and_deduplicate_files(file_list, output_file):
     seen = set()
-    with open(output_file, 'w') as outfile:
+    with open(output_file, "w") as outfile:
         for file_path in file_list:
-            with open(file_path, 'r') as infile:
+            with open(file_path, "r") as infile:
                 for line in infile:
                     stripped_line = remove_version(line.strip())
                     if stripped_line not in seen:
                         seen.add(stripped_line)
-                        outfile.write(stripped_line + '\n')
+                        outfile.write(stripped_line + "\n")
+
+
+# def merge_and_deduplicate_files(file_list, output_file):
+#     with open(output_file, "w") as outfile:
+#         for file_path in file_list:
+#             with open(file_path, "r") as infile:
+#                 for line in infile:
+#                     # stripped_line = remove_version(line.strip())
+#                     stripped_line = line.strip()
+#                     outfile.write(stripped_line + "\n")
 
 
 def remove_version(line):
     # 使用正则表达式匹配包名部分，去除版本号
-    pattern = re.compile(r'^([a-zA-Z0-9\-_]+)')
+    pattern = re.compile(r"^([a-zA-Z0-9\-_]+)")
     match = pattern.search(line)
     if match:
         return match.group(1)

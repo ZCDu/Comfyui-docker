@@ -11,14 +11,19 @@ WORKDIR /app
 RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple && pip config set install.trusted-host mirrors.aliyun.com
 
 COPY merged_requirements.txt /app/ComfyUI/merged_requirements.txt
+COPY other_requirements.txt /app/ComfyUI/other_requirements.txt
 COPY ComfyUI/custom_nodes/x-flux-comfyui /app/ComfyUI/custom_nodes/x-flux-comfyui
 WORKDIR /app/ComfyUI
+RUN python -m pip install pip==24.0 
 RUN cd custom_nodes/x-flux-comfyui && python setup.py
 RUN pip install --no-cache-dir llama-cpp-python \
   --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 RUN git clone https://github.com/PortAudio/portaudio.git && cd portaudio && ./configure && make && make install
 RUN pip install --no-cache-dir minio requests certifi py-cord[voice] pyaudio moviepy==1.0.3
 RUN pip install --no-cache-dir playwright && playwright install
+RUN pip install --no-cache-dir -r other_requirements.txt
+RUN pip install --no-cache-dir -r merged_requirements.txt
+
 
 EXPOSE 8188
 CMD ["python", "main.py", "--port 8188"]
