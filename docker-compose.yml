@@ -3,6 +3,7 @@ services:
   comfyui:
     stdin_open: true
     tty: true
+    privileged: true
     volumes:
       - ./ComfyUI:/app/ComfyUI
       - ./models:/app/ComfyUI/models
@@ -16,6 +17,6 @@ services:
               device_ids: ["0"]
               capabilities:
                 - gpu
-    image: comfyui:0.3.7
+    image: comfyui:0.3.9
     command: python main.py --listen 0.0.0.0
     restart: always

@@ -36,6 +36,6 @@ git clone https://github.com/AIFSH/StyleShot-ComfyUI.git ComfyUI/custom_nodes/St
 git clone https://github.com/SpenserCai/ComfyUI-FunAudioLLM.git ComfyUI/custom_nodes/ComfyUI-FunAudioLLM --depth=1
 git clone https://github.com/smthemex/ComfyUI_EchoMimic.git ComfyUI/custom_nodes/ComfyUI_EchoMimic --depth=1
 git clone https://github.com/AIFSH/ComfyUI-GPT_SoVITS.git ComfyUI/custom_nodes/ComfyUI-GPT_SoVITS --depth=1
-git cone https://github.com/ShmuelRonen/ComfyUI_wav2lip.git ComfyUI/custom_nodes/ComfyUI_wav2lip --depth=1
+git clone https://github.com/ShmuelRonen/ComfyUI_wav2lip.git ComfyUI/custom_nodes/ComfyUI_wav2lip --depth=1
 git clone https://github.com/AIFSH/ComfyUI-RVC.git ComfyUI/custom_nodes/ComfyUI-RVC --depth=1
 git clone https://github.com/AIFSH/ComfyUI-Live2DViewer.git ComfyUI/custom_nodes/ComfyUI-Live2DViewer --depth=1

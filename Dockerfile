@@ -8,10 +8,11 @@ ENV TZ=Etc/UTC
 ENV LANG=zh_CN.UTF-8
 WORKDIR /app
 
-RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple && pip config set install.trusted-host mirrors.aliyun.com
+# RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple && pip config set install.trusted-host mirrors.aliyun.com
+RUN pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple && pip config set install.trusted-host mirrors.tuna.tsinghua.edu.cn
 
-COPY merged_requirements.txt /app/ComfyUI/merged_requirements.txt
-COPY other_requirements.txt /app/ComfyUI/other_requirements.txt
+COPY requirements.txt /app/ComfyUI/requirements.txt
+COPY extra_pakage.txt /app/ComfyUI/extra_pakage.txt
 COPY ComfyUI/custom_nodes/x-flux-comfyui /app/ComfyUI/custom_nodes/x-flux-comfyui
 WORKDIR /app/ComfyUI
 RUN python -m pip install pip==24.0 
@@ -21,8 +22,8 @@ RUN pip install --no-cache-dir llama-cpp-python \
 RUN git clone https://github.com/PortAudio/portaudio.git && cd portaudio && ./configure && make && make install
 RUN pip install --no-cache-dir minio requests certifi py-cord[voice] pyaudio moviepy==1.0.3
 RUN pip install --no-cache-dir playwright && playwright install
-RUN pip install --no-cache-dir -r other_requirements.txt
-RUN pip install --no-cache-dir -r merged_requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r extra_pakage.txt
 
 
 EXPOSE 8188
