@@ -25,17 +25,7 @@ https://github.com/kijai/ComfyUI-Florence2.git
 https://github.com/chflame163/ComfyUI_LayerStyle.git
 https://github.com/yolain/ComfyUI-Easy-Use.git
 https://github.com/1038lab/ComfyUI-OmniGen.git
-https://github.com/ShmuelRonen/ComfyUI-LatentSyncWrapper.git
-https://github.com/AIFSH/ComfyUI-FishSpeech.git
+https://github.com/ltdrdata/ComfyUI-Impact-Subpack ComfyUI-Impact-Pack/impact_subpack
 https://github.com/AIFSH/CosyVoice-ComfyUI.git
-https://github.com/AIFSH/IMAGDressing-ComfyUI.git
-https://github.com/AIFSH/DiffMorpher-ComfyUI.git
-https://github.com/hay86/ComfyUI_LatentSync.git
-https://github.com/AIFSH/VideoSys-ComfyUI.git
-https://github.com/AIFSH/StyleShot-ComfyUI.git
-https://github.com/SpenserCai/ComfyUI-FunAudioLLM.git
-https://github.com/smthemex/ComfyUI_EchoMimic.git
-https://github.com/AIFSH/ComfyUI-GPT_SoVITS.git
-https://github.com/ShmuelRonen/ComfyUI_wav2lip.git
-https://github.com/AIFSH/ComfyUI-RVC.git
-https://github.com/AIFSH/ComfyUI-Live2DViewer.git
+
+# 新增
