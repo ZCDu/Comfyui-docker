@@ -26,6 +26,6 @@ https://github.com/chflame163/ComfyUI_LayerStyle.git
 https://github.com/yolain/ComfyUI-Easy-Use.git
 https://github.com/1038lab/ComfyUI-OmniGen.git
 https://github.com/ltdrdata/ComfyUI-Impact-Subpack ComfyUI-Impact-Pack/impact_subpack
+https://github.com/kijai/ComfyUI-WanVideoWrapper.git
+https://github.com/melMass/comfy_mtb.git
 https://github.com/AIFSH/CosyVoice-ComfyUI.git
-
-# 新增

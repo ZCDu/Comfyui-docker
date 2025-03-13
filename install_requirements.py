@@ -75,9 +75,40 @@ def parse_requirements(file_path):
             extras = "[" + extras
             specifier = extras
         else:  # 普通包名和版本约束
-            package_split = package_spec.split(" ", 1)
-            package = package_split[0].strip()
-            specifier = package_split[1].strip() if len(package_split) > 1 else None
+            if package_spec.find(">=") != -1:
+                package_split = package_spec.split(">=")
+                package = package_split[0].strip()
+                specifier = (
+                    f">={package_split[1].strip()}" if len(package_split) > 1 else None
+                )
+            elif package_spec.find("<=") != -1:
+                package_split = package_spec.split("<=")
+                package = package_split[0].strip()
+                specifier = (
+                    f">={package_split[1].strip()}" if len(package_split) > 1 else None
+                )
+            elif package_spec.find("==") != -1:
+                package_split = package_spec.split("==")
+                package = package_split[0].strip()
+                specifier = (
+                    f">={package_split[1].strip()}" if len(package_split) > 1 else None
+                )
+            elif package_spec.find(">") != -1:
+                package_split = package_spec.split(">")
+                package = package_split[0].strip()
+                specifier = (
+                    f">={package_split[1].strip()}" if len(package_split) > 1 else None
+                )
+            elif package_spec.find("<") != -1:
+                package_split = package_spec.split("<")
+                package = package_split[0].strip()
+                specifier = (
+                    f">={package_split[1].strip()}" if len(package_split) > 1 else None
+                )
+            else:
+                package_split = package_spec.split(" ", 1)
+                package = package_split[0].strip()
+                specifier = package_split[1].strip() if len(package_split) > 1 else None
 
         pending_package = (package, specifier)
         requirements.append((pending_package[0], pending_package[1], current_options))
@@ -114,8 +145,8 @@ def install_dependency(package, specifier, options):
             return
 
     # 安装或更新
-    for single_package in ["torch", "moviepy"]:
-        if package.find(single_package) != -1:
+    for single_package in ["torch", "moviepy", "xformers", "torchvision", "numpy"]:
+        if package == single_package:
             print(f"跳过安装:{package}")
             break
         else:

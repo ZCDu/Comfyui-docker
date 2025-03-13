@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
+FROM pytorch/pytorch:2.6.0-cuda12.4-cudnn9-runtime
 ENV DEBIAN_FRONTEND=noninteractive PIP_PREFER_BINARY=1
 RUN export GIT_PYTHON_REFRESH=quiet
 RUN apt-get update && \

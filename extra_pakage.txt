@@ -1,4 +1,0 @@
-xformers
---extra-index-url https://download.pytorch.org/whl/cu124
-torchvision
---extra-index-url https://download.pytorch.org/whl/cu124
