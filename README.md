@@ -12,6 +12,8 @@ other_requirements里都是虽然requirements里有，但是安装完之后还�
 将需要的插件仓库按照github.txt的格式追加到github.txt里，需要注意如果采用的是第二种追加的模式，需要将追加的插件填写到 # 新增 的下一行。
 而在本方法下，需要先删除掉ComfyUI文件夹，重新从github拉取所有仓库，或者不执行 1 的操作。
 
+需要注意：在每次构建完成之后，需要本地拉取一次容器，等执行完成之后再`git commit`一下，不确定是那个插件仓库会需要再更新一下，为了保证构建镜像是可用的，必须来这么一下。
+
 ## 实施阶段
 1. ./download_repo.py  拉取github.txt下的所有仓库
 2. ./merge_requirments.py 合并依赖
