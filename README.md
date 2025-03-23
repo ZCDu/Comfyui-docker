@@ -1,5 +1,5 @@
 # 当前用到的仓库
-当前用到的插件都在github.txt里
+当前用到的插件都在github.txt里, 在追加新的插件时，请按照github.txt的内容进行设置
 
 other_requirements里都是虽然requirements里有，但是安装完之后还是找不到的python依赖
 
